@@ -14,7 +14,7 @@ def getdata(filepath):
     g = data.GetRasterBand(2).ReadAsArray(0, 0, w, h).reshape(h * w, 1)
     b = data.GetRasterBand(3).ReadAsArray(0, 0, w, h).reshape(h * w, 1)
     img_data = np.concatenate((r, g, b), axis=1)
-    img_data = img_data.reshape(h, w, 3))
+    img_data = img_data.reshape(h, w, 3)
     pre_data = img_data.reshape(img_data.shape[0] * img_data.shape[1], img_data.shape[2])
     return img_data, pre_data
 
